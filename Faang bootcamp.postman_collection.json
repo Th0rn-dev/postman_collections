@@ -1,0 +1,999 @@
+{
+	"info": {
+		"_postman_id": "9f49d1c3-e5ff-4368-987b-123ad35092c8",
+		"name": "Faang bootcamp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11278415"
+	},
+	"item": [
+		{
+			"name": "user_service",
+			"item": [
+				{
+					"name": "skills",
+					"item": [
+						{
+							"name": "createSkill",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": 0,\n  \"title\": \"PlSQL\",\n  \"userIds\": [\n    1\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url_us}}/skills",
+									"host": [
+										"{{base_url_us}}"
+									],
+									"path": [
+										"skills"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createEmptySkill",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": 0,\n  \"title\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url_us}}/skills",
+									"host": [
+										"{{base_url_us}}"
+									],
+									"path": [
+										"skills"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AcquireSkillFromOffer",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": 1,\n  \"title\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url_us}}/skills/acquire?skillId=3&userId=1",
+									"host": [
+										"{{base_url_us}}"
+									],
+									"path": [
+										"skills",
+										"acquire"
+									],
+									"query": [
+										{
+											"key": "skillId",
+											"value": "3"
+										},
+										{
+											"key": "userId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AcquireSkillFromOffer Path Request",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url_us}}/skills/1/offered/3",
+									"host": [
+										"{{base_url_us}}"
+									],
+									"path": [
+										"skills",
+										"1",
+										"offered",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get skills by user_id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url_us}}/skills/user/1",
+									"host": [
+										"{{base_url_us}}"
+									],
+									"path": [
+										"skills",
+										"user",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all skills",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url_us}}/skills",
+									"host": [
+										"{{base_url_us}}"
+									],
+									"path": [
+										"skills"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get skill by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url_us}}/skills/4",
+									"host": [
+										"{{base_url_us}}"
+									],
+									"path": [
+										"skills",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Offered Skills by user_id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url_us}}/skills/offered/user/1",
+									"host": [
+										"{{base_url_us}}"
+									],
+									"path": [
+										"skills",
+										"offered",
+										"user",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "mentorship",
+					"item": [
+						{
+							"name": "Create MentorshipRequest",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"description\": \"Python\",\n  \"requesterId\": 3,\n  \"receiverId\": 4\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url_us}}/mentorship/request",
+									"host": [
+										"{{base_url_us}}"
+									],
+									"path": [
+										"mentorship",
+										"request"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Requests",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"status\": \"PENDING\",\n   \"description\": \"Scala\",\n   \"requesterId\": 7,\n   \"receiverId\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url_us}}/mentorship/request/filter",
+									"host": [
+										"{{base_url_us}}"
+									],
+									"path": [
+										"mentorship",
+										"request",
+										"filter"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Accept Request",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{base_url_us}}/mentorship/request/approval/2",
+									"host": [
+										"{{base_url_us}}"
+									],
+									"path": [
+										"mentorship",
+										"request",
+										"approval",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Reject request",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"reason\":\"sdfsdfsd\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url_us}}/mentorship/request/reject/99",
+									"host": [
+										"{{base_url_us}}"
+									],
+									"path": [
+										"mentorship",
+										"request",
+										"reject",
+										"99"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "user",
+					"item": [
+						{
+							"name": "User deactivation",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{base_url_us}}/users/deactivation/1",
+									"host": [
+										"{{base_url_us}}"
+									],
+									"path": [
+										"users",
+										"deactivation",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Follow user",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-user-id",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": []
+								},
+								"url": {
+									"raw": "{{base_url_us}}/subscription/user/2",
+									"host": [
+										"{{base_url_us}}"
+									],
+									"path": [
+										"subscription",
+										"user",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get count followers",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-user-id",
+										"value": "1"
+									}
+								],
+								"url": {
+									"raw": "{{base_url_us}}/subscription/followers/count",
+									"host": [
+										"{{base_url_us}}"
+									],
+									"path": [
+										"subscription",
+										"followers",
+										"count"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get followers by filter",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"namePattern\": \"JaneSmith\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url_us}}/subscription/1/followers",
+									"host": [
+										"{{base_url_us}}"
+									],
+									"path": [
+										"subscription",
+										"1",
+										"followers"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "project_service",
+			"item": [
+				{
+					"name": "internship",
+					"item": [
+						{
+							"name": "Create internship",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": 0,\n  \"name\": \"Internship Project1\",\n  \"description\": \"Internship in project 1\",\n  \"projectId\": 1,\n  \"mentorId\": 1,\n  \"internIds\": [\n    0\n  ],\n  \"startDate\": \"2024-01-06T12:28:53.948Z\",\n  \"endDate\": \"2024-04-06T12:28:53.948Z\",\n  \"createdBy\": 1,\n  \"candidateIds\": [\n    1, 2, 3, 4\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8082/internship",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"internship"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create internship 2",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": 0,\n  \"name\": \"Internship Project2\",\n  \"description\": \"Internship in project 2\",\n  \"projectId\": 1,\n  \"mentorId\": 1,\n  \"internIds\": [\n    0\n  ],\n  \"startDate\": \"2024-01-06T12:28:53.948Z\",\n  \"endDate\": \"2024-04-06T12:28:53.948Z\",\n  \"createdBy\": 1,\n  \"candidateIds\": [\n    1, 2\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8082/internship",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"internship"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update intership",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": 1,\n  \"name\": \"Internship Project1\",\n  \"description\": \"Internship in project 1\",\n  \"projectId\": 1,\n  \"mentorId\": 1,\n  \"internIds\": [\n    0\n  ],\n  \"startDate\": \"2024-01-06T12:28:53.948Z\",\n  \"endDate\": \"2024-04-06T12:28:53.948Z\",\n  \"createdBy\": 1,\n  \"candidateIds\": [\n    \n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8082/internship/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"internship",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find by ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8082/internship/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"internship",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find All",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8082/internship",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"internship"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find All by Filter",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n//    \"status\": \"COMPLETED\", \n   \"name\": \"Internship Project2\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8082/internship/filter",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"internship",
+										"filter"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "vacancies",
+					"item": [
+						{
+							"name": "Get all skills",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-user-id",
+										"value": "1"
+									}
+								],
+								"url": {
+									"raw": "localhost:8082/api/v1/vacancies/skills",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"api",
+										"v1",
+										"vacancies",
+										"skills"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create vacancy",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-user-id",
+										"value": "1"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": 0,\n  \"name\": \"Java developer\",\n  \"description\": \"В крупную компанию требуется Java разработчик\",\n  \"projectId\": 1,\n  \"candidateIds\": [\n    1, 2, 3\n  ],\n  \"createdBy\": 1,\n  \"status\": \"OPEN\",\n  \"salary\": 0,\n  \"count\": 0,\n  \"requiredSkillIds\": [\n    1, 2, 3\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8082/api/v1/vacancies",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"api",
+										"v1",
+										"vacancies"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get vacancy by ID",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-user-id",
+										"value": "1"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": 0,\n  \"name\": \"Java developer\",\n  \"description\": \"В крупную компанию требуется Java разработчик\",\n  \"projectId\": 1,\n  \"candidateIds\": [\n    0\n  ],\n  \"createdBy\": 1,\n  \"status\": \"OPEN\",\n  \"salary\": 0,\n  \"count\": 0,\n  \"requiredSkillIds\": [\n    1, 2, 3\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8082/api/v1/vacancies/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"api",
+										"v1",
+										"vacancies",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get vacancies by filter",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-user-id",
+										"value": "1"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": 0,\n  \"name\": \"Java developer\",\n  \"description\": \"В крупную компанию требуется Java разработчик\",\n  \"projectId\": 1,\n  \"candidateIds\": [\n    0\n  ],\n  \"createdBy\": 1,\n  \"status\": \"OPEN\",\n  \"salary\": 0,\n  \"count\": 0,\n  \"requiredSkillIds\": [\n    1, 2, 3\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8082/api/v1/vacancies/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"api",
+										"v1",
+										"vacancies",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update vacancy",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-user-id",
+										"value": "1"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": 0,\n  \"name\": \"Java developer\",\n  \"description\": \"В крупную компанию требуется Java разработчик\",\n  \"projectId\": 1,\n  \"candidateIds\": [\n    1, 2, 3, 4\n  ],\n  \"createdBy\": 1,\n  \"status\": \"CLOSED\",\n  \"salary\": 200000,\n  \"count\": 3,\n  \"requiredSkillIds\": [\n    1, 2, 3\n  ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8082/api/v1/vacancies/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"api",
+										"v1",
+										"vacancies",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete vacancy",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-user-id",
+										"value": "1"
+									}
+								],
+								"url": {
+									"raw": "localhost:8082/api/v1/vacancies/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"api",
+										"v1",
+										"vacancies",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "moment",
+					"item": [
+						{
+							"name": "Create Moment",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Successful POST request\", function () {",
+											"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+											"});",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"const now = new Date();",
+											"const rnd = Math.random().toString(36).slice(2, 7);",
+											"",
+											"//2019-02-22T09:49:19.275039200",
+											"pm.globals.set(\"currentDateTome\", now.toISOString());",
+											"pm.globals.set(\"rnd\", rnd);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Moment-{{rnd}}\",\n    \"description\": \"dsc for Moment-{{rnd}}\",\n    \"date\": \"{{currentDateTome}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url_ps}}/moment/project/1",
+									"host": [
+										"{{base_url_ps}}"
+									],
+									"path": [
+										"moment",
+										"project",
+										"1"
+									]
+								},
+								"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+							},
+							"response": []
+						},
+						{
+							"name": "Get moment",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url_ps}}/moment/{{momentId}}",
+									"host": [
+										"{{base_url_ps}}"
+									],
+									"path": [
+										"moment",
+										"{{momentId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all moments",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url_ps}}/moment/project/{{projectId}}",
+									"host": [
+										"{{base_url_ps}}"
+									],
+									"path": [
+										"moment",
+										"project",
+										"{{projectId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update moment",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"// Перед апдейтом запросить сущность и поместить поля в новый запрос (можем изменять все кроме id сущности)",
+											"// Тут еще могут добавляться партнеры (логика работы с партнерами)",
+											"pm.request.addQueryParams()"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": {{name}},\n    \"description\": \"Updated at {{currentDateTome}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url_ps}}/moment/{{momentId}}",
+									"host": [
+										"{{base_url_ps}}"
+									],
+									"path": [
+										"moment",
+										"{{momentId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get filtered moment",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url_ps}}/moment/filtered/project/{{projectId}}",
+									"host": [
+										"{{base_url_ps}}"
+									],
+									"path": [
+										"moment",
+										"filtered",
+										"project",
+										"{{projectId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"const now = new Date();",
+					"const rnd = Math.random().toString(36).slice(2, 7);",
+					"",
+					"//2019-02-22T09:49:19.275039200",
+					"pm.globals.set(\"currentDateTome\", now.toISOString());",
+					"pm.globals.set(\"rnd\", rnd);"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url_ps",
+			"value": "http://localhost:8082",
+			"type": "string"
+		},
+		{
+			"key": "base_url_us",
+			"value": "http://localhost:8080",
+			"type": "string"
+		},
+		{
+			"key": "momentId",
+			"value": "4",
+			"type": "string"
+		},
+		{
+			"key": "projectId",
+			"value": "1",
+			"type": "string"
+		}
+	]
+}
