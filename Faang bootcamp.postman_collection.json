@@ -943,6 +943,261 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "project",
+					"item": [
+						{
+							"name": "Create Project",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-user-id",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Project-{{rnd}}\",\n    \"description\": \"Project-{{rnd}} description\",\n    \"ownerId\": \"\" \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8082/api/v1/projects",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"api",
+										"v1",
+										"projects"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Project If constrain exist",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-user-id",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Supershop\",\n    \"description\": \"The project could not be created.\",\n    \"ownerId\": \"1\" \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8082/api/v1/projects",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"api",
+										"v1",
+										"projects"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Project",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-user-id",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Project name edited\",\n    \"description\": \"edited desc\",\n    \"ownerId\": 1,\n    \"status\": \"ON_HOLD\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8082/api/v1/projects/4",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"api",
+										"v1",
+										"projects",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Project",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-user-id",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Project name edited\",\n    \"description\": \"edited desc\",\n    \"ownerId\": 1,\n    \"status\": \"ON_HOLD\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8082/api/v1/projects/4",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"api",
+										"v1",
+										"projects",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Project Copy",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-user-id",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Project name edited\",\n    \"description\": \"edited desc\",\n    \"ownerId\": 1,\n    \"status\": \"ON_HOLD\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8082/api/v1/projects/4",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"api",
+										"v1",
+										"projects",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Project",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-user-id",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Project name edited\",\n    \"description\": \"edited desc\",\n    \"ownerId\": 1,\n    \"status\": \"ON_HOLD\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8082/api/v1/projects/4",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"api",
+										"v1",
+										"projects",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Project",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-user-id",
+										"value": "1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Project name edited\",\n    \"description\": \"edited desc\",\n    \"ownerId\": 1,\n    \"status\": \"ON_HOLD\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8082/api/v1/projects/4",
+									"host": [
+										"localhost"
+									],
+									"port": "8082",
+									"path": [
+										"api",
+										"v1",
+										"projects",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		}
